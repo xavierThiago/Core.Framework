@@ -24,6 +24,8 @@ install-sh
 autom4te.cache/
 *.user
 *.tar.gz
+*.nupkg
+*.nuspec
 tarballs/
 test-results/
 Thumbs.db
