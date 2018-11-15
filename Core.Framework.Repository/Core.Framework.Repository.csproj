@@ -1,10 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Core.Framework.Entities\Core.Framework.Entities.csproj" />
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <PackageId>Core.Framework.Repository</PackageId>
+        <Description>Base framework for Repository pattern projects.</Description>
+        <Authors>Rafael Cruzeiro</Authors>
+        <Version>1.0.0</Version>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Core.Framework.Entities\Core.Framework.Entities.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Remove="nuget\Core.Framework.Repository.1.0.0.nupkg" />
+    </ItemGroup>
 </Project>

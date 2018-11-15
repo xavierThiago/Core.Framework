@@ -1,11 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-    <SynchReleaseVersion>false</SynchReleaseVersion>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <SynchReleaseVersion>false</SynchReleaseVersion>
+        <PackageId>Core.Framework.Blockchain</PackageId>
+        <Description>Tool for supporting blockchains oriented products.</Description>
+        <Authors>Rafael Cruzeiro</Authors>
+        <Version>1.0.0</Version>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    </ItemGroup>
 </Project>

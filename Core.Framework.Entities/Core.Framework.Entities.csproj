@@ -1,7 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-  </PropertyGroup>
-
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <PackageId>Core.Framework.Entities</PackageId>
+        <Description>Base framework for Entity (POCO) projects.</Description>
+        <Authors>Rafael Cruzeiro</Authors>
+        <Version>1.0.0</Version>
+    </PropertyGroup>
+    <ItemGroup>
+      <None Remove="nuget\Core.Framework.Entities.1.0.0.nupkg" />
+    </ItemGroup>
 </Project>
