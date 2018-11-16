@@ -13,6 +13,7 @@ namespace Core.Framework.API.Messages
         { get; set; }
         public List<T> Data
         { get; set; }
+        public int RowCount { get { return Data.Count; } }
 
         protected BaseResponse()
         {
