@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Core.Framework.Blockchain
 {
-    public sealed class Block
+    public class Block
     {
         public int Index { get; set; }
         public DateTimeOffset Timestamp { get; set; }
@@ -22,7 +22,6 @@ namespace Core.Framework.Blockchain
             PreviousHash = null;
             Nonce = 0;
             Data = new List<object> { data };
-            Hash = CalculateHash();
         }
 
         public bool IsValid()
@@ -36,7 +35,7 @@ namespace Core.Framework.Blockchain
             Hash = CalculateHash();
         }
 
-        internal string CalculateHash()
+        protected internal virtual string CalculateHash()
         {
             SHA256 sHA256 = SHA256.Create();
             byte[] inputBytes = Encoding.ASCII.GetBytes(
@@ -46,7 +45,7 @@ namespace Core.Framework.Blockchain
             return Convert.ToBase64String(outputBytes);
         }
 
-        internal void Mine(int difficulty)
+        protected internal virtual void Mine(int difficulty)
         {
             var leadingZeros = new string('0', difficulty);
 

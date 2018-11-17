@@ -9,5 +9,6 @@
     </PropertyGroup>
     <ItemGroup>
       <None Remove="nuget\Core.Framework.API.Messages.1.0.0.nupkg" />
+      <None Remove="nuget\Core.Framework.API.Messages.1.1.0.nupkg" />
     </ItemGroup>
 </Project>

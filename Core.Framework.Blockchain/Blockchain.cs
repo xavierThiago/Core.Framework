@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Core.Framework.Blockchain
 {
-    public sealed class Blockchain
+    public class Blockchain
     {
         public List<Block> Chain { get; private set; }
 
