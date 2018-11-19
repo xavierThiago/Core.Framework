@@ -5,7 +5,7 @@
         <PackageId>Core.Framework.Blockchain</PackageId>
         <Description>Tool for supporting blockchains oriented products.</Description>
         <Authors>Rafael Cruzeiro</Authors>
-        <Version>1.0.2</Version>
+        <Version>1.0.3</Version>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />

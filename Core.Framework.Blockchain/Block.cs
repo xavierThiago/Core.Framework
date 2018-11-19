@@ -22,6 +22,7 @@ namespace Core.Framework.Blockchain
             PreviousHash = null;
             Nonce = 0;
             Data = new List<object> { data };
+            Hash = CalculateHash();
         }
 
         public bool IsValid()
@@ -35,7 +36,7 @@ namespace Core.Framework.Blockchain
             Hash = CalculateHash();
         }
 
-        protected internal virtual string CalculateHash()
+        protected internal string CalculateHash()
         {
             SHA256 sHA256 = SHA256.Create();
             byte[] inputBytes = Encoding.ASCII.GetBytes(
@@ -45,7 +46,7 @@ namespace Core.Framework.Blockchain
             return Convert.ToBase64String(outputBytes);
         }
 
-        protected internal virtual void Mine(int difficulty)
+        protected internal void Mine(int difficulty)
         {
             var leadingZeros = new string('0', difficulty);
 
