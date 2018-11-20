@@ -10,7 +10,7 @@ TestResults/
 # globs
 Makefile.in
 *.DS_Store
-*.sln
+*.sln.cache
 *.suo
 *.cache
 *.pidb
