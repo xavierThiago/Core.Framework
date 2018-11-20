@@ -1,0 +1,41 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.Entities", "Core.Framework.Entities\Core.Framework.Entities.csproj", "{6A2C0DF8-AF46-4326-9ECD-1FAE29B72195}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.Repository", "Core.Framework.Repository\Core.Framework.Repository.csproj", "{47545B84-049E-4E16-BAD9-072E016E07EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.API.Messages", "Core.Framework.API.Messages\Core.Framework.API.Messages.csproj", "{D61B5D69-C324-4716-92CB-391D27AF5752}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.Cache", "Core.Framework.Cache\Core.Framework.Cache.csproj", "{EE7B03C7-E06B-4398-A215-51DFC0CB2DF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.Blockchain", "Core.Framework.Blockchain\Core.Framework.Blockchain.csproj", "{5FE441B0-18C7-4293-8162-F20F1F9CB81C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A2C0DF8-AF46-4326-9ECD-1FAE29B72195}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6A2C0DF8-AF46-4326-9ECD-1FAE29B72195}.Debug|x86.Build.0 = Debug|Any CPU
+		{6A2C0DF8-AF46-4326-9ECD-1FAE29B72195}.Release|x86.ActiveCfg = Release|Any CPU
+		{6A2C0DF8-AF46-4326-9ECD-1FAE29B72195}.Release|x86.Build.0 = Release|Any CPU
+		{47545B84-049E-4E16-BAD9-072E016E07EB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{47545B84-049E-4E16-BAD9-072E016E07EB}.Debug|x86.Build.0 = Debug|Any CPU
+		{47545B84-049E-4E16-BAD9-072E016E07EB}.Release|x86.ActiveCfg = Release|Any CPU
+		{47545B84-049E-4E16-BAD9-072E016E07EB}.Release|x86.Build.0 = Release|Any CPU
+		{D61B5D69-C324-4716-92CB-391D27AF5752}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D61B5D69-C324-4716-92CB-391D27AF5752}.Debug|x86.Build.0 = Debug|Any CPU
+		{D61B5D69-C324-4716-92CB-391D27AF5752}.Release|x86.ActiveCfg = Release|Any CPU
+		{D61B5D69-C324-4716-92CB-391D27AF5752}.Release|x86.Build.0 = Release|Any CPU
+		{EE7B03C7-E06B-4398-A215-51DFC0CB2DF5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EE7B03C7-E06B-4398-A215-51DFC0CB2DF5}.Debug|x86.Build.0 = Debug|Any CPU
+		{EE7B03C7-E06B-4398-A215-51DFC0CB2DF5}.Release|x86.ActiveCfg = Release|Any CPU
+		{EE7B03C7-E06B-4398-A215-51DFC0CB2DF5}.Release|x86.Build.0 = Release|Any CPU
+		{5FE441B0-18C7-4293-8162-F20F1F9CB81C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5FE441B0-18C7-4293-8162-F20F1F9CB81C}.Debug|x86.Build.0 = Debug|Any CPU
+		{5FE441B0-18C7-4293-8162-F20F1F9CB81C}.Release|x86.ActiveCfg = Release|Any CPU
+		{5FE441B0-18C7-4293-8162-F20F1F9CB81C}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
