@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.Cache", "Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.Blockchain", "Core.Framework.Blockchain\Core.Framework.Blockchain.csproj", "{5FE441B0-18C7-4293-8162-F20F1F9CB81C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.AWS.Notifier", "Core.Framework.AWS.Notifier\Core.Framework.AWS.Notifier.csproj", "{D41A3158-50EF-4287-8CC5-465E8581CBE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -37,5 +39,9 @@ Global
 		{5FE441B0-18C7-4293-8162-F20F1F9CB81C}.Debug|x86.Build.0 = Debug|Any CPU
 		{5FE441B0-18C7-4293-8162-F20F1F9CB81C}.Release|x86.ActiveCfg = Release|Any CPU
 		{5FE441B0-18C7-4293-8162-F20F1F9CB81C}.Release|x86.Build.0 = Release|Any CPU
+		{D41A3158-50EF-4287-8CC5-465E8581CBE9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D41A3158-50EF-4287-8CC5-465E8581CBE9}.Debug|x86.Build.0 = Debug|Any CPU
+		{D41A3158-50EF-4287-8CC5-465E8581CBE9}.Release|x86.ActiveCfg = Release|Any CPU
+		{D41A3158-50EF-4287-8CC5-465E8581CBE9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
