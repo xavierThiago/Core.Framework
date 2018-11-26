@@ -7,8 +7,8 @@
         <Authors>Rafael Cruzeiro</Authors>
         <Version>1.2.0</Version>
     </PropertyGroup>
-    <ItemGroup>
-      <None Remove="nuget\Core.Framework.API.Messages.1.0.0.nupkg" />
-      <None Remove="nuget\Core.Framework.API.Messages.1.1.0.nupkg" />
-    </ItemGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>
+        </DebugType>
+    </PropertyGroup>
 </Project>
