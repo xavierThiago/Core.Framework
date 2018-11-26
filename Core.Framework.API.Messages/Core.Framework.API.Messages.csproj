@@ -5,7 +5,7 @@
         <PackageId>Core.Framework.API.Messages</PackageId>
         <Description>Base framework for Web API request/response messages.</Description>
         <Authors>Rafael Cruzeiro</Authors>
-        <Version>1.1.0</Version>
+        <Version>1.2.0</Version>
     </PropertyGroup>
     <ItemGroup>
       <None Remove="nuget\Core.Framework.API.Messages.1.0.0.nupkg" />

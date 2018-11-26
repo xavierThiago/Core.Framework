@@ -34,5 +34,14 @@ namespace Core.Framework.API.Messages
                 StackTrace = ex.StackTrace
             };
         }
+
+        public static ResponseMessage Create(string code, string message)
+        {
+            return new ResponseMessage
+            {
+                Code = code,
+                Message = message
+            };
+        }
     }
 }
