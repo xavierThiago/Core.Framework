@@ -2,7 +2,7 @@
 
 namespace Core.Framework.Cache
 {
-    public interface ICacheService
+    public interface ICacheService : IDisposable
     {
         TimeSpan Expires
         { get; set; }

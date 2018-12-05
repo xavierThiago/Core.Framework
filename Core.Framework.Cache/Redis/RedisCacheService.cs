@@ -5,6 +5,7 @@ namespace Core.Framework.Cache.Redis
 {
     public sealed class RedisCacheService : ICacheService
     {
+        readonly ConnectionMultiplexer _redis;
         readonly IServer _server;
         readonly IDatabase _cache;
 
@@ -13,15 +14,15 @@ namespace Core.Framework.Cache.Redis
 
         public RedisCacheService(string endpoint, int database)
         {
-            var redisOptions = new ConfigurationOptions
+            var options = new ConfigurationOptions
             {
                 AbortOnConnectFail = false,
                 AllowAdmin = true
             };
-            redisOptions.EndPoints.Add(endpoint);
-            var multiplexer = ConnectionMultiplexer.Connect(redisOptions);
-            _server = multiplexer.GetServer(endpoint);
-            _cache = multiplexer.GetDatabase(database);
+            options.EndPoints.Add(endpoint);
+            _redis = ConnectionMultiplexer.Connect(options);
+            _server = _redis.GetServer(endpoint);
+            _cache = _redis.GetDatabase(database);
         }
 
         public bool Exists(string key)
@@ -52,12 +53,14 @@ namespace Core.Framework.Cache.Redis
             { throw ex; }
         }
 
-        public void Set(string key, string value, int? minutesToExpire = null)
+        public void Set(string key, string value, int? secondsToExpire = null)
         {
             try
             {
                 if (Expires == default(TimeSpan))
-                    Expires = minutesToExpire == null ? TimeSpan.FromMinutes(30) : TimeSpan.FromMinutes(minutesToExpire.Value);
+                    Expires = secondsToExpire == null
+                        ? TimeSpan.FromSeconds(1800)
+                        : TimeSpan.FromSeconds(secondsToExpire.Value);
                 _cache.StringSet(key, value, Expires);
             }
             catch (RedisCommandException rcex)
@@ -95,6 +98,14 @@ namespace Core.Framework.Cache.Redis
             { throw rex; }
             catch (Exception ex)
             { throw ex; }
+        }
+
+        public void Dispose()
+        {
+            if (_redis != null)
+                _redis.Dispose();
+
+            GC.SuppressFinalize(this);
         }
     }
 }
