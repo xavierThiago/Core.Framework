@@ -5,7 +5,7 @@
         <PackageId>Core.Framework.Cache</PackageId>
         <Description>Cache tool with Redis support.</Description>
         <Authors>Rafael Cruzeiro</Authors>
-        <Version>1.0.0</Version>
+        <Version>1.1.0</Version>
     </PropertyGroup>
     <ItemGroup>
         <Folder Include="Redis\" />
