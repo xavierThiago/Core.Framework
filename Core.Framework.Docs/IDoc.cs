@@ -8,6 +8,6 @@
         string Content
         { get; set; }
 
-        string Generate();
+        byte[] Generate();
     }
 }

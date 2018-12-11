@@ -27,6 +27,9 @@ namespace Core.Framework.Docs.PDF
         public string Content
         { get; set; }
 
+        public string Page
+        { get; set; }
+
         public ColorMode ColorMode
         { get; set; }
 
@@ -74,7 +77,7 @@ namespace Core.Framework.Docs.PDF
             WebSettings = new WebSettings();
         }
 
-        public virtual string Generate()
+        public virtual byte[] Generate()
         {
             try
             {
@@ -114,6 +117,7 @@ namespace Core.Framework.Docs.PDF
                     {
                         new ObjectSettings
                         {
+                            Page = Page,
                             HtmlContent = Content,
                             HeaderSettings =
                             {
@@ -146,7 +150,7 @@ namespace Core.Framework.Docs.PDF
                     }
                 };
 
-                return Convert.ToBase64String(_converter.Convert(doc));
+                return _converter.Convert(doc);
             }
             catch (Exception ex)
             { throw ex; }
