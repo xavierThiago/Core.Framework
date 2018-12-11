@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <PackageId>Core.Framework.Docs</PackageId>
+        <Description>Base framework for docs (like pdf) generation.</Description>
+        <Authors>Rafael Cruzeiro</Authors>
+        <Version>1.0.0</Version>
+    </PropertyGroup>
+    <ItemGroup>
+        <Folder Include="PDF\" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="DinkToPdf" Version="1.0.8" />
+    </ItemGroup>
+</Project>
