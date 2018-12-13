@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.Docs", "Core
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.xUnit", "Core.Framework.xUnit\Core.Framework.xUnit.csproj", "{B9C3B2F0-0592-4A56-A6D9-3A69F63977BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.AWS.S3", "Core.Framework.AWS.S3\Core.Framework.AWS.S3.csproj", "{3B3728A8-D10D-45A6-9143-37D1EFC4ECF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -60,5 +62,9 @@ Global
 		{B9C3B2F0-0592-4A56-A6D9-3A69F63977BF}.Debug|x86.Build.0 = Debug|Any CPU
 		{B9C3B2F0-0592-4A56-A6D9-3A69F63977BF}.Release|x86.ActiveCfg = Release|Any CPU
 		{B9C3B2F0-0592-4A56-A6D9-3A69F63977BF}.Release|x86.Build.0 = Release|Any CPU
+		{3B3728A8-D10D-45A6-9143-37D1EFC4ECF7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3B3728A8-D10D-45A6-9143-37D1EFC4ECF7}.Debug|x86.Build.0 = Debug|Any CPU
+		{3B3728A8-D10D-45A6-9143-37D1EFC4ECF7}.Release|x86.ActiveCfg = Release|Any CPU
+		{3B3728A8-D10D-45A6-9143-37D1EFC4ECF7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
