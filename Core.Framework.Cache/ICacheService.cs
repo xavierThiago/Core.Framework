@@ -9,7 +9,7 @@ namespace Core.Framework.Cache
 
         bool Exists(string key);
         string Get(string key);
-        void Set(string key, string value, int? minutesToExpire = null);
+        void Set(string key, string value, int? secondsToExpire = null);
         void Remove(string key);
         void Clear();
     }
