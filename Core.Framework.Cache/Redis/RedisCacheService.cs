@@ -10,7 +10,7 @@ namespace Core.Framework.Cache.Redis
         readonly IDatabase _cache;
 
         public TimeSpan Expires
-        { get; set; }
+        { get; set; } = TimeSpan.FromDays(1);
 
         public RedisCacheService(string endpoint, int database)
         {
@@ -57,10 +57,8 @@ namespace Core.Framework.Cache.Redis
         {
             try
             {
-                if (Expires == default(TimeSpan))
-                    Expires = secondsToExpire == null
-                        ? TimeSpan.FromSeconds(1800)
-                        : TimeSpan.FromSeconds(secondsToExpire.Value);
+                if (secondsToExpire != null)
+                    Expires = TimeSpan.FromSeconds(secondsToExpire.Value);
                 _cache.StringSet(key, value, Expires);
             }
             catch (RedisCommandException rcex)
