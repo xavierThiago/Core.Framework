@@ -5,7 +5,7 @@ namespace Core.Framework.API.Messages
     public abstract class BaseResponse<T>
         where T : class
     {
-        public string StatusCode
+        public int StatusCode
         { get; set; }
         public List<ResponseMessage> Messages
         { get; set; }
