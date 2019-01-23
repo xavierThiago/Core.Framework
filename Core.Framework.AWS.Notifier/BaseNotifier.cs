@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Amazon;
+using Amazon.Runtime;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
 
@@ -10,52 +12,44 @@ namespace Core.Framework.AWS.Notifier
     {
         protected AmazonSimpleNotificationServiceClient _snsClient;
 
-        protected BaseNotifier()
+        protected BaseNotifier(AWSCredentials credentials, RegionEndpoint region)
         {
-            _snsClient = new AmazonSimpleNotificationServiceClient();
+            _snsClient = new AmazonSimpleNotificationServiceClient(credentials, region);
         }
 
-        public virtual async Task<List<Model.Topic>> ListTopics()
+        protected BaseNotifier(string accessKey, string secretKey)
+        {
+            AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
+            _snsClient = new AmazonSimpleNotificationServiceClient(credentials, RegionEndpoint.USEast1);
+        }
+        /// <summary>
+        /// Lists the topics.
+        /// </summary>
+        /// <returns>The first 100 topics Amazon Resource Name.</returns>
+        public virtual async Task<List<string>> ListTopics()
         {
             try
             {
-                List<Model.Topic> topics = new List<Model.Topic>();
-                foreach (Model.Topic topic in await ListTopics(null)) topics.Add(topic);
-                return topics;
-            }
-            catch (Exception ex)
-            { throw ex; }
-        }
-
-        public virtual async Task<Model.Topic> FindTopic(string topicName)
-        {
-            try
-            {
-                Topic topic = await _snsClient.FindTopicAsync(topicName);
-                return topic != null
-                    ? new Model.Topic
-                    {
-                        Arn = topic.TopicArn
-                    }
-                    : null;
-            }
-            catch (Exception ex)
-            { throw ex; }
-        }
-
-        async Task<List<Model.Topic>> ListTopics(string nextToken)
-        {
-            try
-            {
-                List<Model.Topic> topics = new List<Model.Topic>();
-                ListTopicsRequest request = new ListTopicsRequest(nextToken);
+                List<string> topics = new List<string>();
+                ListTopicsRequest request = new ListTopicsRequest();
                 ListTopicsResponse response = await _snsClient.ListTopicsAsync(request);
-                response.Topics.ForEach(to => topics.Add(new Model.Topic
-                {
-                    Arn = to.TopicArn
-                }));
-                foreach (Model.Topic topic in await ListTopics(response.NextToken)) topics.Add(topic);
+                response.Topics.ForEach(topic => topics.Add(topic.TopicArn));
                 return topics;
+            }
+            catch (Exception ex)
+            { throw ex; }
+        }
+        /// <summary>
+        /// Gets the specified topic.
+        /// </summary>
+        /// <returns>The topic Amazon Resource Name.</returns>
+        /// <param name="topicName">Topic name.</param>
+        public virtual async Task<string> GetTopic(string topicName)
+        {
+            try
+            {
+                var topic = await _snsClient.FindTopicAsync(topicName);
+                return topic?.TopicArn;
             }
             catch (Exception ex)
             { throw ex; }

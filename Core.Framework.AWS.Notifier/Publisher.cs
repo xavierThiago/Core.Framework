@@ -1,76 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
+using Amazon;
+using Amazon.Runtime;
 using Amazon.SimpleNotificationService.Model;
 using Newtonsoft.Json;
 
 namespace Core.Framework.AWS.Notifier
 {
-    public class Publihser<T> : BaseNotifier
-        where T : class
+    public class Publihser : BaseNotifier
     {
-        public Model.Topic Topic { get; private set; }
+        public Publihser(AWSCredentials credentials, RegionEndpoint region)
+            : base(credentials, region)
+        { }
 
-        public Publihser(string topicARN)
-        {
-            Topic = new Model.Topic
-            {
-                Arn = topicARN
-            };
-        }
-
-        public Publihser()
-        {
-            Topic = new Model.Topic();
-        }
-
-        public virtual async Task<List<Model.Subscription>> ListSubscriptions()
-        {
-            try
-            {
-                List<Model.Subscription> subscriptions = new List<Model.Subscription>();
-                foreach (Model.Subscription subscription in await ListSubscriptions(null)) subscriptions.Add(subscription);
-                return subscriptions;
-            }
-            catch (Exception ex)
-            { throw ex; }
-        }
-
-        public virtual async Task<List<Model.Subscription>> ListSubscriptionsByTopic(string topicArn)
-        {
-            try
-            {
-                List<Model.Subscription> subscriptions = new List<Model.Subscription>();
-                foreach (Model.Subscription subscription in await ListSubscriptionsByTopic(topicArn, null)) subscriptions.Add(subscription);
-                return subscriptions;
-            }
-            catch (Exception ex)
-            { throw ex; }
-        }
-
-        public virtual async Task<List<Model.Subscription>> ListSubscriptionsByTopic()
-        {
-            try
-            {
-                return await ListSubscriptionsByTopic(Topic.Arn);
-            }
-            catch (Exception ex)
-            { throw ex; }
-        }
-
+        public Publihser(string accessKey, string secretKey)
+            : base(accessKey, secretKey)
+        { }
+        /// <summary>
+        /// Creates the topic.
+        /// </summary>
+        /// <returns>The topic Amazon Resource Name.</returns>
+        /// <param name="topicName">Topic name.</param>
         public virtual async Task<string> CreateTopic(string topicName)
         {
             try
             {
                 CreateTopicRequest request = new CreateTopicRequest(topicName);
                 CreateTopicResponse response = await _snsClient.CreateTopicAsync(request);
-                Topic.Arn = response.TopicArn;
-                return response.ResponseMetadata.RequestId;
+                return response.TopicArn;
             }
             catch (Exception ex)
             { throw ex; }
         }
-
+        /// <summary>
+        /// Deletes the topic.
+        /// </summary>
+        /// <returns>The request ID.</returns>
+        /// <param name="topicArn">Topic Amazon Resource Name.</param>
         public virtual async Task<string> DeleteTopic(string topicArn)
         {
             try
@@ -82,84 +48,20 @@ namespace Core.Framework.AWS.Notifier
             catch (Exception ex)
             { throw ex; }
         }
-
-        public virtual async Task<string> DeleteTopic()
-        {
-            try
-            {
-                return await DeleteTopic(Topic.Arn);
-            }
-            catch (Exception ex)
-            { throw ex; }
-        }
-
-        public virtual async Task<string> Publish(string topicArn, T message)
+        /// <summary>
+        /// Publish an message in the specified topic.
+        /// </summary>
+        /// <returns>The message ID.</returns>
+        /// <param name="topicArn">Topic Amazon Resource Name.</param>
+        /// <param name="message">The message.</param>
+        /// <typeparam name="T">The message type.</typeparam>
+        public virtual async Task<string> Publish<T>(string topicArn, T message)
         {
             try
             {
                 PublishRequest request = new PublishRequest(topicArn, JsonConvert.SerializeObject(message));
                 PublishResponse response = await _snsClient.PublishAsync(request);
                 return response.MessageId;
-            }
-            catch (Exception ex)
-            { throw ex; }
-        }
-
-        public virtual async Task<string> Publish(T message)
-        {
-            try
-            {
-                return await Publish(Topic.Arn, message);
-            }
-            catch (Exception ex)
-            { throw ex; }
-        }
-
-        async Task<List<Model.Subscription>> ListSubscriptions(string nextToken)
-        {
-            try
-            {
-                List<Model.Subscription> subscriptions = new List<Model.Subscription>();
-                ListSubscriptionsRequest request = new ListSubscriptionsRequest(nextToken);
-                ListSubscriptionsResponse response = await _snsClient.ListSubscriptionsAsync(request);
-                response.Subscriptions.ForEach(su => subscriptions.Add(new Model.Subscription
-                {
-                    Arn = su.SubscriptionArn,
-                    Endpoint = su.Endpoint,
-                    Owner = su.Owner,
-                    Protocol = su.Protocol,
-                    Topic = new Model.Topic
-                    {
-                        Arn = su.TopicArn
-                    }
-                }));
-                foreach (Model.Subscription subscription in await ListSubscriptions(response.NextToken)) subscriptions.Add(subscription);
-                return subscriptions;
-            }
-            catch (Exception ex)
-            { throw ex; }
-        }
-
-        async Task<List<Model.Subscription>> ListSubscriptionsByTopic(string topicArn, string nextToken)
-        {
-            try
-            {
-                List<Model.Subscription> subscriptions = new List<Model.Subscription>();
-                ListSubscriptionsByTopicRequest request = new ListSubscriptionsByTopicRequest(topicArn, nextToken);
-                ListSubscriptionsByTopicResponse response = await _snsClient.ListSubscriptionsByTopicAsync(request);
-                response.Subscriptions.ForEach(su => subscriptions.Add(new Model.Subscription
-                {
-                    Arn = su.SubscriptionArn,
-                    Endpoint = su.Endpoint,
-                    Owner = su.Owner,
-                    Protocol = su.Protocol,
-                    Topic = new Model.Topic
-                    {
-                        Arn = su.TopicArn
-                    }
-                }));
-                foreach (Model.Subscription subscription in await ListSubscriptionsByTopic(topicArn, response.NextToken)) subscriptions.Add(subscription);
-                return subscriptions;
             }
             catch (Exception ex)
             { throw ex; }
