@@ -4,7 +4,7 @@
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <PackageId>Core.Framework.Notification</PackageId>
         <PackOnBuild>true</PackOnBuild>
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>1.1.0</PackageVersion>
         <Description>Interfaces to guide the send message implementations</Description>
         <Title>Core.Framework.Notification</Title>
         <Authors>Rafael Cruzeiro</Authors>

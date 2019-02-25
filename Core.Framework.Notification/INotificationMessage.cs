@@ -2,10 +2,11 @@
 
 namespace Core.Framework.Notification
 {
-    public interface INotificationMessage
+    public interface INotificationMessage<T>
+        where T : MessageContact
     {
-        MessageContact From { get; set; }
-        List<MessageContact> To { get; set; }
+        T From { get; set; }
+        List<T> To { get; set; }
         string Subject { get; set; }
         string Body { get; set; }
     }

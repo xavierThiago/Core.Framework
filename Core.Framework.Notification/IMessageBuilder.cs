@@ -2,6 +2,7 @@
 {
     public interface IMessageBuilder
     {
-        INotificationMessage Build(IMessageParser parser = null);
+        INotificationMessage<T> Build<T>(IMessageParser parser = null)
+            where T : MessageContact;
     }
 }

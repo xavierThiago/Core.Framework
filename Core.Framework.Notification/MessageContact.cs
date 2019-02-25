@@ -1,14 +1,12 @@
 ﻿namespace Core.Framework.Notification
 {
-    public sealed class MessageContact
+    public abstract class MessageContact
     {
         public string Name { get; set; }
-        public string Email { get; set; }
 
-        public MessageContact(string name, string email)
+        protected MessageContact(string name)
         {
             Name = name;
-            Email = email;
         }
     }
 }
