@@ -2,14 +2,13 @@
 
 namespace Core.Framework.Notification
 {
-    public interface IMessageHandler
+    public interface IMessageHandler<T>
+        where T : MessageContact
     {
-        void Send<T>(INotificationMessage<T> message)
-            where T : MessageContact;
-        void Send(IMessageBuilder builder);
+        void Send(INotificationMessage<T> message);
+        void Send(IMessageBuilder<T> builder);
 
-        Task SendAsync<T>(INotificationMessage<T> message)
-            where T : MessageContact;
-        Task SendAsync(IMessageBuilder builder);
+        Task SendAsync(INotificationMessage<T> message);
+        Task SendAsync(IMessageBuilder<T> builder);
     }
 }

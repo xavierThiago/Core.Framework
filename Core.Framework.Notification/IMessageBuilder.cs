@@ -1,8 +1,8 @@
 ﻿namespace Core.Framework.Notification
 {
-    public interface IMessageBuilder
+    public interface IMessageBuilder<T>
+        where T : MessageContact
     {
-        INotificationMessage<T> Build<T>(IMessageParser parser = null)
-            where T : MessageContact;
+        INotificationMessage<T> Build(IMessageParser parser = null);
     }
 }
