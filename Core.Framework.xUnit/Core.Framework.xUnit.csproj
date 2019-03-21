@@ -14,8 +14,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core.Framework.Docs\Core.Framework.Docs.csproj" />
+    <ProjectReference Include="..\Core.Framework.reCAPTCHA\Core.Framework.reCAPTCHA.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Docs\" />
+    <Folder Include="Captcha\" />
   </ItemGroup>
 </Project>

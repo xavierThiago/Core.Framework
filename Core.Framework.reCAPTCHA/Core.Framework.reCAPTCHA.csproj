@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
         <LangVersion>latest</LangVersion>
         <PackOnBuild>true</PackOnBuild>
         <PackageId>Core.Framework.reCAPTCHA</PackageId>
         <Description>Tool for validate Google reCAPTCHA response.</Description>
         <Authors>Rafael Cruzeiro</Authors>
-        <Version>1.0.0</Version>
+        <Version>1.0</Version>
+        <Owners>rcruzeiro</Owners>
+        <Title>Core.Framework.reCAPTCHA</Title>
+        <PackageVersion>1.0.1</PackageVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>
+        </DebugType>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-        <PackageReference Include="Microsoft.Extensions.Http" Version="2.2.0" />
-        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.2.0" />
+        <PackageReference Include="Microsoft.Extensions.Http" Version="2.1.0" />
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.1.0" />
     </ItemGroup>
 </Project>

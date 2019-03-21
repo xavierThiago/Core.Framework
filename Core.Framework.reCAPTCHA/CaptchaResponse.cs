@@ -7,7 +7,7 @@ namespace Core.Framework.reCAPTCHA
         public bool Success { get; set; }
         public decimal Score { get; set; }
         public string Action { get; set; }
-        public DateTime ChallengeTimestamp { get; set; }
+        public DateTime Challenge_TS { get; set; }
         public string Hostname { get; set; }
     }
 }
