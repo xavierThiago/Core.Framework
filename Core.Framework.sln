@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.Notification
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.reCAPTCHA", "Core.Framework.reCAPTCHA\Core.Framework.reCAPTCHA.csproj", "{57ECDEEE-34C0-49AA-8B68-8176BDE059A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.Utils", "Core.Framework.Utils\Core.Framework.Utils.csproj", "{71078399-F9D1-46C0-88E3-E7F791F30A1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -78,5 +80,9 @@ Global
 		{57ECDEEE-34C0-49AA-8B68-8176BDE059A1}.Debug|x86.Build.0 = Debug|Any CPU
 		{57ECDEEE-34C0-49AA-8B68-8176BDE059A1}.Release|x86.ActiveCfg = Release|Any CPU
 		{57ECDEEE-34C0-49AA-8B68-8176BDE059A1}.Release|x86.Build.0 = Release|Any CPU
+		{71078399-F9D1-46C0-88E3-E7F791F30A1F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{71078399-F9D1-46C0-88E3-E7F791F30A1F}.Debug|x86.Build.0 = Debug|Any CPU
+		{71078399-F9D1-46C0-88E3-E7F791F30A1F}.Release|x86.ActiveCfg = Release|Any CPU
+		{71078399-F9D1-46C0-88E3-E7F791F30A1F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
