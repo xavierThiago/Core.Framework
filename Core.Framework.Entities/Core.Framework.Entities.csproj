@@ -6,6 +6,10 @@
         <Description>Base framework for Entity (POCO) projects.</Description>
         <Authors>Rafael Cruzeiro</Authors>
         <Version>1.0.0</Version>
+        <PackageVersion>1.1.0</PackageVersion>
+        <Owners>Rafael Cruzeiro</Owners>
+        <PackageProjectUrl>https://github.com/rcruzeiro/Core.Framework/tree/master/Core.Framework.Entities</PackageProjectUrl>
+        <Title>Core.Framework.Entities</Title>
     </PropertyGroup>
     <ItemGroup>
       <None Remove="nuget\Core.Framework.Entities.1.0.0.nupkg" />

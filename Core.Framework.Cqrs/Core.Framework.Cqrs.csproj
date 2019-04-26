@@ -3,9 +3,19 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.2</TargetFramework>
         <LangVersion>latest</LangVersion>
+        <Authors>Rafael Cruzeiro</Authors>
+        <PackageId>Core.Framework.Cqrs</PackageId>
+        <PackageVersion>1.0.0</PackageVersion>
+        <Owners>Rafael Cruzeiro</Owners>
+        <PackageProjectUrl>https://github.com/rcruzeiro/Core.Framework/tree/master/Core.Framework.Cqrs</PackageProjectUrl>
+        <Title>Core.Framework.Cqrs</Title>
+        <Description>Base framework for Command/Query pattern</Description>
     </PropertyGroup>
     <ItemGroup>
         <Folder Include="Commands\" />
         <Folder Include="Queries\" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="NuGet.Build.Packaging" Version="0.2.0" />
     </ItemGroup>
 </Project>
