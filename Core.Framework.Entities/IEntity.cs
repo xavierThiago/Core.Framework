@@ -2,10 +2,8 @@
 
 namespace Core.Framework.Entities
 {
-    public interface IEntity
+    public interface IEntity : IDbObject
     {
-        int ID { get; set; }
-        DateTime? CreatedAt { get; set; }
-        DateTime? UpdatedAt { get; set; }
+        DateTimeOffset? UpdatedAt { get; set; }
     }
 }
