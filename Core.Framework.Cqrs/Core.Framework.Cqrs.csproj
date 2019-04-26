@@ -5,11 +5,14 @@
         <LangVersion>latest</LangVersion>
         <Authors>Rafael Cruzeiro</Authors>
         <PackageId>Core.Framework.Cqrs</PackageId>
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>1.0.1</PackageVersion>
         <Owners>Rafael Cruzeiro</Owners>
         <PackageProjectUrl>https://github.com/rcruzeiro/Core.Framework/tree/master/Core.Framework.Cqrs</PackageProjectUrl>
         <Title>Core.Framework.Cqrs</Title>
         <Description>Base framework for Command/Query pattern</Description>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+      <DebugType></DebugType>
     </PropertyGroup>
     <ItemGroup>
         <Folder Include="Commands\" />

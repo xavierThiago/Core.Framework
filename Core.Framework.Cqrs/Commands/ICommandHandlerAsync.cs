@@ -9,10 +9,10 @@ namespace Core.Framework.Cqrs.Commands
         Task ExecuteAsync(T command, CancellationToken cancellationToken = default);
     }
 
-    public interface ICommandHandlerAsync<T, R>
+    public interface ICommandHandlerAsync<T, TResult>
         where T : class, ICommand
-        where R : class
+        where TResult : class
     {
-        Task<R> ExecuteAsync(T command, CancellationToken cancellationToken = default);
+        Task<TResult> ExecuteAsync(T command, CancellationToken cancellationToken = default);
     }
 }

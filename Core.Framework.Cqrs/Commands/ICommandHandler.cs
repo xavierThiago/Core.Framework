@@ -6,10 +6,10 @@
         void Execute(T command);
     }
 
-    public interface ICommandHandler<T, R>
+    public interface ICommandHandler<T, TResult>
         where T : class, ICommand
-        where R : class
+        where TResult : class
     {
-        R Execute(T command);
+        TResult Execute(T command);
     }
 }

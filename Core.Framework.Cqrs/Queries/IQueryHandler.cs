@@ -1,9 +1,9 @@
 ﻿namespace Core.Framework.Cqrs.Queries
 {
-    public interface IQueryHandler<T, R>
+    public interface IQueryHandler<T, TResult>
         where T : class, IFilter
-        where R : class
+        where TResult : class
     {
-        R Handle(T filter);
+        TResult Handle(T filter);
     }
 }

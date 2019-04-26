@@ -3,10 +3,10 @@ using System.Threading.Tasks;
 
 namespace Core.Framework.Cqrs.Queries
 {
-    public interface IQueryHandlerAsync<T, R>
+    public interface IQueryHandlerAsync<T, TResult>
         where T : class, IFilter
-        where R : class
+        where TResult : class
     {
-        Task<R> HandleAsync(T filter, CancellationToken cancellationToken = default);
+        Task<TResult> HandleAsync(T filter, CancellationToken cancellationToken = default);
     }
 }
