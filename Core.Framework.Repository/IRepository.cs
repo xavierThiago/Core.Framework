@@ -12,7 +12,5 @@ namespace Core.Framework.Repository
         void Add(T entity);
         void Update(T entity);
         void Remove(T entity);
-        void Save();
-        void Rollback();
     }
 }

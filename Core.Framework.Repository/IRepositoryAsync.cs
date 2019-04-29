@@ -8,6 +8,5 @@ namespace Core.Framework.Repository
     {
         Task<T> FindAsync(params object[] keys);
         Task AddAsync(T entity);
-        Task SaveAsync();
     }
 }

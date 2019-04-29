@@ -6,10 +6,13 @@
         <Description>Base framework for Repository pattern projects.</Description>
         <Authors>Rafael Cruzeiro</Authors>
         <Version>1.0.0</Version>
-        <PackageVersion>1.1.0</PackageVersion>
+        <PackageVersion>1.2.0</PackageVersion>
         <Owners>Rafael Cruzeiro</Owners>
         <PackageProjectUrl>https://github.com/rcruzeiro/Core.Framework/tree/master/Core.Framework.Repository</PackageProjectUrl>
         <Title>Core.Framework.Repository</Title>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+      <DebugType></DebugType>
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="..\Core.Framework.Entities\Core.Framework.Entities.csproj" />
