@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.Utils", "Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.Cqrs", "Core.Framework.Cqrs\Core.Framework.Cqrs.csproj", "{7DDF3F6F-9F6A-48E2-83EE-6A95F8B9DC17}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.SendGrid", "Core.Framework.SendGrid\Core.Framework.SendGrid.csproj", "{59D7FBC2-11E6-4308-AA44-22E77FACD333}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -90,5 +92,9 @@ Global
 		{7DDF3F6F-9F6A-48E2-83EE-6A95F8B9DC17}.Debug|x86.Build.0 = Debug|Any CPU
 		{7DDF3F6F-9F6A-48E2-83EE-6A95F8B9DC17}.Release|x86.ActiveCfg = Release|Any CPU
 		{7DDF3F6F-9F6A-48E2-83EE-6A95F8B9DC17}.Release|x86.Build.0 = Release|Any CPU
+		{59D7FBC2-11E6-4308-AA44-22E77FACD333}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{59D7FBC2-11E6-4308-AA44-22E77FACD333}.Debug|x86.Build.0 = Debug|Any CPU
+		{59D7FBC2-11E6-4308-AA44-22E77FACD333}.Release|x86.ActiveCfg = Release|Any CPU
+		{59D7FBC2-11E6-4308-AA44-22E77FACD333}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

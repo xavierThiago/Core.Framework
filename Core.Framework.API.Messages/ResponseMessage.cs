@@ -28,7 +28,7 @@ namespace Core.Framework.API.Messages
             {
                 Code = code,
                 InnerException =
-                    ex.InnerException != null ? ex.InnerException.Message : String.Empty,
+                    ex.InnerException != null ? ex.InnerException.Message : string.Empty,
                 Message = ex.Message,
                 Source = ex.Source,
                 StackTrace = ex.StackTrace

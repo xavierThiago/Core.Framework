@@ -6,6 +6,10 @@
         <Description>Base framework for Web API request/response messages.</Description>
         <Authors>Rafael Cruzeiro</Authors>
         <Version>1.4.0</Version>
+        <PackageVersion>1.5.0</PackageVersion>
+        <Owners>Rafael Cruzeiro</Owners>
+        <PackageProjectUrl>https://github.com/rcruzeiro/Core.Framework/tree/master/Core.Framework.API.Messages</PackageProjectUrl>
+        <Title>Core.Framework.API.Messages</Title>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <DebugType>
