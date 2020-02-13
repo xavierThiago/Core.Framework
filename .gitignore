@@ -1,6 +1,9 @@
 # Autosave files
 *~
 
+#Custom rule
+.vscode/
+
 # build
 [Oo]bj/
 [Bb]in/
